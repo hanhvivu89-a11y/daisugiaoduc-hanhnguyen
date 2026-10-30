@@ -1,0 +1,85 @@
+/* Custom styles for Landing Page - Đại Sứ Giáo Dục Hạnh Nguyễn */
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #1e40af;
+  --primary-dark: #1e3a8a;
+  --secondary: #0ea5e9;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --dark: #0f172a;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glassmorphism effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-nav-pill {
+  background: rgba(241, 245, 249, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+/* Custom Scrollbar for horizontal tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle glowing pulse for important CTAs */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.pulse-cta {
+  animation: pulse-ring 2.5s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Card hover animation */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.1), 0 10px 10px -5px rgba(30, 58, 138, 0.04);
+}
+
+/* Sticky floating bottom bar for mobile */
+.floating-bar {
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Safe area padding for iPhones with bottom bar */
+.pb-safe {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+}
